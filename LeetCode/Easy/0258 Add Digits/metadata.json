@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    public int addDigits(int num) {\n        int sum = 0;\n        int x = 0;\n        while(num > 0){\n            x = num % 10;\n            sum += x;\n            num /= 10;\n        }\n        if(sum > 9)\n           return addDigits(sum);\n        return sum;\n    }\n}",
+  "difficulty": "Easy",
+  "language": "java",
+  "platform": "LeetCode",
+  "problemName": "Add Digits",
+  "problemNumber": "258",
+  "submissionDate": "2026-08-17T17:01:07.168Z",
+  "submissionUrl": "https://leetcode.com/problems/add-digits/submissions/2110426251/"
+}

@@ -1,10 +1,10 @@
 {
-  "code": "class Solution {\n    public List<String> summaryRanges(int[] nums) {\n        \n        List<String> result = new ArrayList<>();\n\n        int i = 0;\n\n        while (i < nums.length) {\n            int start = nums[i];\n\n            // Find the end of the current consecutive range\n            while (i + 1 < nums.length &&\n                   nums[i + 1] == nums[i] + 1) {\n                i++;\n            }\n\n            int end = nums[i];\n\n            // Single number\n            if (start == end) {\n                result.add(String.valueOf(start));\n            } \n            // Range of multiple numbers\n            else {\n                result.add(start + \"->\" + end);\n            }\n\n            // Move to the next range\n            i++;\n        }\n\n        return result;\n    }\n}",
+  "code": "class Solution {\n    public List<String> summaryRanges(int[] nums) {\n        \n        List<String> result = new ArrayList<>();\n\n        int i = 0;\n\n        while (i < nums.length) {\n            int start = nums[i];\n\n            while (i + 1 < nums.length &&\n                   nums[i + 1] == nums[i] + 1) {\n                i++;\n            }\n\n            int end = nums[i];\n\n            if (start == end) {\n                result.add(String.valueOf(start));\n            } \n            else {\n                result.add(start + \"->\" + end);\n            }\n            i++;\n        }\n\n        return result;\n    }\n}",
   "difficulty": "Easy",
   "language": "java",
   "platform": "LeetCode",
   "problemName": "Summary Ranges",
   "problemNumber": "228",
-  "submissionDate": "2026-08-20T05:26:45.167Z",
+  "submissionDate": "2026-08-20T05:27:48.706Z",
   "submissionUrl": "https://leetcode.com/problems/summary-ranges/"
 }

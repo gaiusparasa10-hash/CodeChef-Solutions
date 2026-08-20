@@ -1,7 +1,6 @@
 class Solution {
     public int[][] merge(int[][] intervals) {
 
-        // Sort by start time
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
 
         List<int[]> result = new ArrayList<>();

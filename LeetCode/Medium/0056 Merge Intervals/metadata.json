@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    public int[][] merge(int[][] intervals) {\n\n        // Sort by start time\n        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);\n\n        List<int[]> result = new ArrayList<>();\n\n        int start = intervals[0][0];\n        int end = intervals[0][1];\n\n        for (int i = 1; i < intervals.length; i++) {\n\n            if (intervals[i][0] <= end) {\n                end = Math.max(end, intervals[i][1]);\n            }\n\n            else {\n                result.add(new int[]{start, end});\n\n                start = intervals[i][0];\n                end = intervals[i][1];\n            }\n        }\n\n        result.add(new int[]{start, end});\n\n        return result.toArray(new int[result.size()][]);\n    }\n}",
+  "difficulty": "Medium",
+  "language": "java",
+  "platform": "LeetCode",
+  "problemName": "Merge Intervals",
+  "problemNumber": "56",
+  "submissionDate": "2026-08-20T05:48:41.079Z",
+  "submissionUrl": "https://leetcode.com/problems/merge-intervals/"
+}

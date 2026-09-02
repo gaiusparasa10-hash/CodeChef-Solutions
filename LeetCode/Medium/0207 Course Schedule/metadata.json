@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    public boolean canFinish(int numCourses, int[][] prerequisites) {\n\n        // Build graph\n        List<List<Integer>> graph = new ArrayList<>();\n\n        for (int i = 0; i < numCourses; i++) {\n            graph.add(new ArrayList<>());\n        }\n\n        for (int[] pair : prerequisites) {\n            int course = pair[0];\n            int prerequisite = pair[1];\n\n            graph.get(prerequisite).add(course);\n        }\n\n        int[] state = new int[numCourses];\n\n        for (int course = 0; course < numCourses; course++) {\n            if (state[course] == 0) {\n                if (hasCycle(graph, course, state)) {\n                    return false;\n                }\n            }\n        }\n\n        return true;\n    }\n\n    private boolean hasCycle(\n        List<List<Integer>> graph,\n        int course,\n        int[] state\n    ) {\n\n        if (state[course] == 1) {\n            return true;\n        }\n\n        if (state[course] == 2) {\n            return false;\n        }\n\n        state[course] = 1;\n\n        for (int next : graph.get(course)) {\n            if (hasCycle(graph, next, state)) {\n                return true;\n            }\n        }\n\n        state[course] = 2;\n\n        return false;\n    }\n}",
+  "difficulty": "Medium",
+  "language": "java",
+  "platform": "LeetCode",
+  "problemName": "Course Schedule",
+  "problemNumber": "207",
+  "submissionDate": "2026-09-02T09:59:44.851Z",
+  "submissionUrl": "https://leetcode.com/problems/course-schedule/"
+}

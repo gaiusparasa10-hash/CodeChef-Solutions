@@ -1,7 +1,6 @@
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
 
-        // Build graph
         List<List<Integer>> graph = new ArrayList<>();
 
         for (int i = 0; i < numCourses; i++) {

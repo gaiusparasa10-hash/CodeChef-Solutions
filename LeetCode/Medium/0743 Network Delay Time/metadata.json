@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    public int networkDelayTime(int[][] times, int n, int k) {\n        int[] distance = new int[n+1];\n        Arrays.fill(distance, Integer.MAX_VALUE);\n        distance[k] = 0;\n\n        for(int i=1;i<n;i++){\n            for(int[] edge : times){\n                int u = edge[0];\n                int v = edge[1];\n                int w = edge[2];\n                if(distance[u] != Integer.MAX_VALUE && distance[u] + w < distance[v]){\n                    distance[v] = distance[u] + w;\n                }\n            }\n        }\n\n        int res = 0;\n        for(int i=1;i<=n;i++){\n            if(distance[i] == Integer.MAX_VALUE) return -1;\n            res = Math.max(res, distance[i]);\n        }\n        return res;\n    }\n}",
+  "difficulty": "Medium",
+  "language": "java",
+  "platform": "LeetCode",
+  "problemName": "Network Delay Time",
+  "problemNumber": "743",
+  "submissionDate": "2026-09-03T06:00:18.700Z",
+  "submissionUrl": "https://leetcode.com/problems/network-delay-time/description/"
+}

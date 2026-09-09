@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    int[] parent;\n    public int[] findRedundantConnection(int[][] edges) {\n        int n = edges.length;\n        parent = new int[n + 1];\n        for (int i = 1; i <= n; i++)\n            parent[i] = i;\n        for (int[] e : edges) {\n            int a = find(e[0]);\n            int b = find(e[1]);\n            if (a == b)\n                return e;\n            parent[a] = b;\n        }\n        return new int[0];\n    }\n    int find(int x) {\n        if (parent[x] != x)\n            parent[x] = find(parent[x]);\n        return parent[x];\n    }\n}",
+  "difficulty": "Medium",
+  "language": "java",
+  "platform": "LeetCode",
+  "problemName": "Redundant Connection",
+  "problemNumber": "684",
+  "submissionDate": "2026-09-09T10:27:31.028Z",
+  "submissionUrl": "https://leetcode.com/problems/redundant-connection/submissions/2136208997/"
+}

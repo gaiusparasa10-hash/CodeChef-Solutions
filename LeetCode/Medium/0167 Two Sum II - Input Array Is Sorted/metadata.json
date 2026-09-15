@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        int n = nums.length;\n        for(int i = 0; i < n; i++){\n            for(int j = i + 1 ; j < n; j++){\n                if(nums[i] + nums[j] == target)\n                    return new int[]{i, j};\n            }\n        }\n        return new int[]{};\n    }\n}",
+  "difficulty": "Medium",
+  "language": "unknown",
+  "platform": "LeetCode",
+  "problemName": "Two Sum II - Input Array Is Sorted",
+  "problemNumber": "167",
+  "submissionDate": "2026-09-15T06:33:33.116Z",
+  "submissionUrl": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+}

@@ -1,10 +1,10 @@
 {
-  "code": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        for(int i = 0; i < nums.)\n    }\n}",
+  "code": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        for(int i = 0; i < nums.length(); i++){\n            \n        }\n    }\n}",
   "difficulty": "Easy",
   "language": "java",
   "platform": "LeetCode",
   "problemName": "Two Sum",
   "problemNumber": "1",
-  "submissionDate": "2026-09-15T06:26:09.727Z",
+  "submissionDate": "2026-09-15T06:27:11.017Z",
   "submissionUrl": "https://leetcode.com/problems/two-sum/"
 }

@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    public boolean isSubsequence(String s, String t) {\n        int i = 0; // pointer for s\n\n        for (int j = 0; j < t.length(); j++) {\n            if (i < s.length() && s.charAt(i) == t.charAt(j)) {\n                i++;\n            }\n        }\n\n        return i == s.length();\n    }\n}",
+  "difficulty": "Easy",
+  "language": "java",
+  "platform": "LeetCode",
+  "problemName": "Is Subsequence",
+  "problemNumber": "392",
+  "submissionDate": "2026-09-16T11:10:34.910Z",
+  "submissionUrl": "https://leetcode.com/problems/is-subsequence/"
+}

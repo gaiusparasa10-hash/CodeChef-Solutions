@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\n    public boolean isInterleave(String s1, String s2, String s3) {\n\n        int m = s1.length();\n        int n = s2.length();\n\n        if (m + n != s3.length()) {\n            return false;\n        }\n\n        boolean[] dp = new boolean[n + 1];\n\n        dp[0] = true;\n\n        for (int i = 0; i <= m; i++) {\n\n            for (int j = 0; j <= n; j++) {\n\n                if (i == 0 && j == 0) {\n                    continue;\n                }\n\n                boolean fromS1 = false;\n                boolean fromS2 = false;\n\n                // dp[j] still represents the previous row\n                if (i > 0) {\n                    fromS1 =\n                        dp[j]\n                        && s1.charAt(i - 1)\n                           == s3.charAt(i + j - 1);\n                }\n\n                // dp[j - 1] represents the current row\n                if (j > 0) {\n                    fromS2 =\n                        dp[j - 1]\n                        && s2.charAt(j - 1)\n                           == s3.charAt(i + j - 1);\n                }\n\n                dp[j] = fromS1 || fromS2;\n            }\n        }\n\n        return dp[n];\n    }\n}",
+  "difficulty": "Medium",
+  "language": "java",
+  "platform": "LeetCode",
+  "problemName": "Interleaving String",
+  "problemNumber": "97",
+  "submissionDate": "2026-09-23T10:33:52.304Z",
+  "submissionUrl": "https://leetcode.com/problems/interleaving-string/description/"
+}
